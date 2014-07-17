@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+var COINS_CONSUMED=0;
 var HEIGHT_OF_COIN=10; //In pixels
 var DIAM_OF_COIN=80; //In pixels
 var NUM_OF_COINS=5; //By default set to 5

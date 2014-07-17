@@ -116,3 +116,29 @@ function initScoreCard(){
     $("#scoreCardPlayer1").css({position:'absolute',left:SCORE_CARD_PLAYER1.pos.leftFromFrame,top:SCORE_CARD_PLAYER1.pos.topFromFrame});
     $("#scoreCardPlayer2").css({position:'absolute',right:SCORE_CARD_PLAYER1.pos.leftFromFrame,top:SCORE_CARD_PLAYER2.pos.topFromFrame});
 }
+function AnimateUp(inStackPos,shiftValue){
+    //alert();
+    var tempCoin=COIN_STACK[inStackPos];
+    if(inStackPos<0)
+        inStackPos=0;
+    var coinName="Coin"+tempCoin.pos.inStackPos.toString();
+    var coinId="#img"+coinName;
+    var tempString="-="+shiftValue.toString()+"px";
+    //alert(tempString);
+    $(".coinSpan").hide();
+    $(coinId).css({position:'absolute'});
+    $(coinId).animate({top:tempString},1500);
+    $("#span"+coinName).css({position:'absolute',top:tempString});
+    $(".coinSpan").show();
+    //alert();
+    /*$(coinId).fadeOut("slow");
+    shiftUp(inStackPos,shiftValue);
+    $(coinId).fadeIn("slow");*/
+}
+function updateSum(inStackPos){
+    var sum=0;
+    for(var i=NUM_OF_COINS_LEFT_IN_THE_GAME-1;i>=inStackPos;i--){
+        sum+=COIN_STACK[i].value;
+    }
+    $("#sumOfValues").html(sum);
+}

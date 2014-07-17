@@ -17,7 +17,7 @@ and open the template in the editor.
 }
 #GameFrameLoadPage{
     position:absolute;
-    top:75px;
+    top:25px;
     left:350px;
     background-image: url('../images/Gold-coins.jpg');
     padding-top: 20px;
@@ -27,7 +27,7 @@ and open the template in the editor.
 }
 #GameFrame{
     position:absolute;
-    top:75px;
+    top:25px;
     left:350px;
     background-color: wheat;
     padding-top: 20px;
@@ -91,4 +91,9 @@ and open the template in the editor.
     position: absolute;
     top:20px;
     left:20px;
+}
+#Rules{
+    position: absolute;
+        top: 578px;
+        left:350px;
 }

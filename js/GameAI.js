@@ -11,7 +11,7 @@ function initExecutableArray(pos){
         j++;
     }
     for(var i=0;i<=NUM_OF_COINS_LEFT_IN_THE_GAME;i++){
-        console.log(EXECUTABLE_ARRAY[i]);
+        //console.log(EXECUTABLE_ARRAY[i]);
     }
 }
 //Works fine
@@ -21,9 +21,9 @@ function initSumArray(){
     for(var j=2;j<=NUM_OF_COINS_LEFT_IN_THE_GAME;j++){
         SUM_EXECUTABLE[j]=SUM_EXECUTABLE[j-1]+EXECUTABLE_ARRAY[j];
     }
-    console.log("sum of above array");
+    //console.log("sum of above array");
     for(var i=0;i<=NUM_OF_COINS_LEFT_IN_THE_GAME;i++){
-        console.log(SUM_EXECUTABLE[i]);
+        //console.log(SUM_EXECUTABLE[i]);
     }
 }
 function initDPBackTrack(){
@@ -33,7 +33,7 @@ function initDPBackTrack(){
 }
 function DPBackTrack(pos){
     initDPBackTrack();
-    console.log("Backtracking");
+    //console.log("Backtracking");
     var maxima=DP[pos*(NUM_OF_COINS_LEFT_IN_THE_GAME+1)+1];
     var maximaIndex=1;
     var maxAffordability=getCurPlayer().maxCoinLimit;
@@ -44,10 +44,34 @@ function DPBackTrack(pos){
         }
             DP_BACKTRACK[0]=maximaIndex;
         }
-        console.log(DP_BACKTRACK[0]);
+        //console.log(DP_BACKTRACK[0]);
+}
+function Algo(){
+    var prob=Math.random();
+    var rand=Math.floor(prob * 100 + 1);
+    if(LEVEL==="LEVEL1"){
+        if(rand<=50){
+            return useAlgo();
+        }else{
+            return dontUseAlgo();
+        }
+    }else if(LEVEL==="LEVEL2"){
+        if(rand<=70){
+            return useAlgo();
+        }else{
+            return dontUseAlgo();
+        }
+    }else{
+            return useAlgo();
+    }
+}
+function dontUseAlgo(){
+    var prob=Math.random();
+    var rand=Math.floor(prob * getCurPlayer().maxCoinLimit + 1);
+    return rand;
 }
 function useAlgo(){
-    console.log("KeyBoard Switched off");
+    //console.log("KeyBoard Switched off");
     initExecutableArray(NUM_OF_COINS_LEFT_IN_THE_GAME-1);
     initDP();
     initSumArray();
@@ -128,10 +152,10 @@ function PlayTheGame(start,maxTake){
             DP[start*(NUM_OF_COINS_LEFT_IN_THE_GAME+1)+maxTake]=sumArray(start,NUM_OF_COINS_LEFT_IN_THE_GAME)-max(max(sumArray(start+1,NUM_OF_COINS_LEFT_IN_THE_GAME)-PlayTheGame(start+1,maxTake-1),PlayTheGame(start+maxTake,2*maxTake-1)),PlayTheGame(start+maxTake,2*maxTake));
             return DP[start*(NUM_OF_COINS_LEFT_IN_THE_GAME+1)+maxTake];
         }
-    }else if(DP[start*(NUM_OF_COINS_LEFT_IN_THE_GAME+1)+maxTake]!== undefined&&(start<=NUM_OF_COINS_LEFT_IN_THE_GAME&&maxTake<=NUM_OF_COINS_LEFT_IN_THE_GAME))
+    }else if(DP[start*(NUM_OF_COINS_LEFT_IN_THE_GAME+1)+maxTake]!== undefined && (start<=NUM_OF_COINS_LEFT_IN_THE_GAME && maxTake<=NUM_OF_COINS_LEFT_IN_THE_GAME))
         return DP[start*(NUM_OF_COINS_LEFT_IN_THE_GAME+1)+maxTake];
     else if(start+maxTake>(NUM_OF_COINS_LEFT_IN_THE_GAME)||start===(NUM_OF_COINS_LEFT_IN_THE_GAME)){
-          return sumArray(start,NUM_OF_COINS_LEFT_IN_THE_GAME);
+        return sumArray(start,NUM_OF_COINS_LEFT_IN_THE_GAME);
     }
 }
 function printDP(){
@@ -140,6 +164,6 @@ function printDP(){
         for(var j=1;j<=NUM_OF_COINS_LEFT_IN_THE_GAME;j++){
             str=str+DP[i*(NUM_OF_COINS_LEFT_IN_THE_GAME+1)+j]+" ";
         }
-        console.log(str);
+        //console.log(str);
     } 
 }

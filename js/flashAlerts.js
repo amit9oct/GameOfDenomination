@@ -19,9 +19,9 @@ function flashAlert(){
     }else{
         prevPlayer=player1;
     }
-    var tempTextToDisplay="coins";
-    if(prevMovePlayer.numOfcoinsTakenInPrevMove===1){
-       tempTextToDisplay="coin";
+    var tempTextToDisplay="coin";
+    if(prevPlayer.numOfCoinsTakenInPrevMove>1){
+       tempTextToDisplay="coins";
     }
     if(playerName==="YOU"){
         playerName="Your";
@@ -29,8 +29,15 @@ function flashAlert(){
         playerName+="'s";
     }
     var maxNumOfCoinThatCanBeTaken=(NUM_OF_COINS_LEFT_IN_THE_GAME>getCurPlayer().maxCoinLimit)? getCurPlayer().maxCoinLimit:NUM_OF_COINS_LEFT_IN_THE_GAME;
-    $("#FlashDiv").html(playerName+" turn. "+prevMovePlayer+" took "+prevPlayer.numOfCoinsTakeninPrevMove+" "+tempTextToDisplay+" in previous move."+"<br>Now you can take at most "+ maxNumOfCoinThatCanBeTaken.toString()+" coins. "
-           +"The sum of coins which you are taking is <span id='sumOfValues'></span>" );
+    var tempText=null;
+    if(maxNumOfCoinThatCanBeTaken>1){
+        tempText="coins";
+    }
+    else{
+        tempText="coin";
+    }
+    $("#FlashDiv").html(playerName+" turn. "+prevMovePlayer+" took "+prevPlayer.numOfCoinsTakenInPrevMove+" "+tempTextToDisplay+" in previous move."+"<br>Now you can take at most "+ maxNumOfCoinThatCanBeTaken.toString()+" "+tempText+". "
+           +"The sum of values coins which you are taking is <span id='sumOfValues'></span>" );
     
 }
 

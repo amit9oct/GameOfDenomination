@@ -33,19 +33,33 @@ function startGame(){
     var player1Img=document.createElement('img');
     player1Img.id="imgPlayer1";
     player1Img.src=PLAYER_BUCKET_IMAGE;
-    document.getElementById("Player1").appendChild(player1Img);
+    //document.getElementById("Player1").appendChild(player1Img);
     var player2Div=document.createElement('div');
     player2Div.id="Player2";
     document.getElementById("GameFrame").appendChild(player2Div);
     var player2Img=document.createElement('img');
     player2Img.id="imgPlayer2";
     player2Img.src=PLAYER_BUCKET_IMAGE;
-    document.getElementById("Player2").appendChild(player2Img);
+    //document.getElementById("Player2").appendChild(player2Img);
     display();
     flashAlert();
+    var player1Stack=document.createElement('div');
+    player1Stack.id="Player1Stack";
+    document.getElementById("GameFrame").appendChild(player1Stack);
+    var player2Stack=document.createElement('div');
+    player2Stack.id="Player2Stack";
+    document.getElementById("GameFrame").appendChild(player2Stack);
     $(document).ready(function(){
         if(GAME_TYPE==="SINGLE_PLAYER"){
             gameLoop();
         }
     });
 }
+$(document).ready(function(){
+   $(window).resize(
+           function(){
+               setFrame("#GameFrameLoadPage");
+               setFrame("#GameFrame");
+           }
+   );
+});

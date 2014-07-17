@@ -9,7 +9,7 @@ function Player(playerType,name){
     this.playerCoinStack=new Array();
     this.turn=false;
     this.maxCoinLimit=1;
-    this.numOfCoinsTakeninPrevMove=0;
+    this.numOfCoinsTakenInPrevMove=0;
 }
 Player.prototype.pushCoin=function(coin){
    if(this.coinStackHeadPointer<NUM_OF_COINS){

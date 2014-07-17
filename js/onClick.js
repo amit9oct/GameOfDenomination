@@ -13,14 +13,6 @@ function drop(event,pos) {
     $(".selected").hide();
     event.preventDefault();
 }
-$(document).ready(function(){
-   $(window).resize(
-           function(){
-               setFrame("#GameFrameLoadPage");
-               setFrame("#GameFrame");
-           }
-   );
-});
 function prepareScreen(){
      $(document).click(function(e){
         console.log("1 clicked on:"+e.target.id);

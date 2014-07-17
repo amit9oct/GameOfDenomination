@@ -78,6 +78,7 @@ KeyPressed.prototype.takeAction=function(){
                 //console.log("did nothing when up was pressed");
                 POSITION_OF_LAST_COIN_SELECTED++;
             }
+            updateSum(POSITION_OF_LAST_COIN_SELECTED);
        }else{
            //shift the coins down and do nothing. Make sure that only last pos change. Don't assign coins to player.
            //console.log("Pressed down key");
@@ -97,7 +98,8 @@ KeyPressed.prototype.takeAction=function(){
                 //console.log("Number of coins taken is negative");
                 POSITION_OF_LAST_COIN_SELECTED--;
                 COIN_SELECTED=false;
-            } 
+            }
+            updateSum(POSITION_OF_LAST_COIN_SELECTED);
        }
    }else{
        //check if the user can take the coins or not.
