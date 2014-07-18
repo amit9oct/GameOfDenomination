@@ -118,9 +118,9 @@ function initScoreCard(){
 }
 function AnimateUp(inStackPos,shiftValue){
     //alert();
-    var tempCoin=COIN_STACK[inStackPos];
     if(inStackPos<0)
         inStackPos=0;
+    var tempCoin=COIN_STACK[inStackPos];
     var coinName="Coin"+tempCoin.pos.inStackPos.toString();
     var coinId="#img"+coinName;
     var tempString="-="+shiftValue.toString()+"px";
