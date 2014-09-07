@@ -1,7 +1,5 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Mainly contains the diplay related functions. Display on screen.
  */
 function display(){
     for(var i=0;i<NUM_OF_COINS_LEFT_IN_THE_GAME;i++){
@@ -118,8 +116,9 @@ function initScoreCard(){
 }
 function AnimateUp(inStackPos,shiftValue){
     //alert();
-    if(inStackPos<0)
-        inStackPos=0;
+    /*if(inStackPos<0)
+        inStackPos=0;*/
+    console.log("inStackPos= " + inStackPos);
     var tempCoin=COIN_STACK[inStackPos];
     var coinName="Coin"+tempCoin.pos.inStackPos.toString();
     var coinId="#img"+coinName;
@@ -137,6 +136,9 @@ function AnimateUp(inStackPos,shiftValue){
 }
 function updateSum(inStackPos){
     var sum=0;
+    if(inStackPos<0){
+        inStackPos=0;
+    }
     for(var i=NUM_OF_COINS_LEFT_IN_THE_GAME-1;i>=inStackPos;i--){
         sum+=COIN_STACK[i].value;
     }

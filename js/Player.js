@@ -1,5 +1,5 @@
 /* 
- * 
+ * Contains details of the class player. This class is used to set player details.
  */
 function Player(playerType,name){
     this.type=playerType;

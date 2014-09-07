@@ -1,7 +1,5 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Generates flash messages on the top of the screen.
  */
 function flashAlert(){
     var playerName=null;

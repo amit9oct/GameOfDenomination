@@ -37,7 +37,9 @@ function initGameParameters(playerName){
     initPostionOfLastCoin();
 }
 function AnimateAllCoinsUp(coinsToShift){
+    console.log("Number Of Coins left= "+NUM_OF_COINS_LEFT_IN_THE_GAME+" Coins to shift= "+coinsToShift);
     for(var i=1;i<=coinsToShift;i++){
+           console.log("Value sent to Animate= "+(NUM_OF_COINS_LEFT_IN_THE_GAME-i));
            AnimateUp(NUM_OF_COINS_LEFT_IN_THE_GAME-i,DEFAULT_SHIFT_UP);
        }
 }
@@ -49,7 +51,7 @@ function animationsTest (callback) {
             clearInterval(testAnimationInterval);
             callback();
         }
-    }, 25);
+    }, 50);
 };
 function gameLoop(){
     if(CURR_TURN_PLAYER_ID==="Player1"){

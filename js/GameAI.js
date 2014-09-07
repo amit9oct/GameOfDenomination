@@ -1,3 +1,4 @@
+
 /* 
  * Contains the function PlayTheGame, which is main brain and unbeatable algorithm.
  * The function PlayTheGame returns the maximum amount that first player can collect if he/she plays optimally.
@@ -67,7 +68,8 @@ function Algo(){
 }
 function dontUseAlgo(){
     var prob=Math.random();
-    var rand=Math.floor(prob * getCurPlayer().maxCoinLimit + 1);
+    var limit=(getCurPlayer().maxCoinLimit>NUM_OF_COINS_LEFT_IN_THE_GAME)? NUM_OF_COINS_LEFT_IN_THE_GAME:getCurPlayer().maxCoinLimit;
+    var rand=Math.floor(prob * limit + 1);
     return rand;
 }
 function useAlgo(){
