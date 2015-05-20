@@ -31,34 +31,34 @@ This page initially contains the page options. These include the number of coins
     </head>
     <body onload="setFrame('#GameFrame')">
         <div id="GameFrame">
-        <div id="welcomeText">The Game Of Denomination</div>
+        <div id="welcomeText">
+		</div>
         <div id="level">
-               <input type="radio" name="level" value="LEVEL1" checked="checked" />Level 1<br>
-               <input type="radio" name="level" value="LEVEL2" />Level 2<br>
-               <input type="radio" name="level" value="LEVEL3"  />Level 3<br>
+				<br><br>
+				Select The Game Level:<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="radio" name="level" value="LEVEL1" checked="checked" />&nbsp;Level 1<br>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			   <input type="radio" name="level" value="LEVEL2" />&nbsp;Level 2<br>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			   <input type="radio" name="level" value="LEVEL3"  />&nbsp;Level 3<br>
+			   <br>
                Select Number Of Coins:<br>
+			   &nbsp;&nbsp;
                <input type="radio" name="numOfCoins" value="FIRST" />5 &nbsp;
                <input type="radio" name="numOfCoins" checked="checked" value="SECOND" />10 &nbsp;
                <input type="radio" name="numOfCoins" value="THIRD" />20 &nbsp;<br>
-               Select The Game Mode:<br>
+               <br>
+			   Select The Game Mode:<br>
+			   &nbsp;&nbsp;&nbsp;&nbsp;
                <input type="radio" name="playerOption" value="TWO_PLAYER" />Two Player<br>
+			   &nbsp;&nbsp;&nbsp;&nbsp;
                <input type="radio" checked="checked" name="playerOption" value="SINGLE_PLAYER" checked="checked" />Against Computer<br>
-               <button id="Play" autofocus="" name="Play" onclick="setParameters()">Play</button>
+               <br>
+			   <button class='btn' id="RulesBtn" autofocus="" name="Rules" onclick="setRules('#GameFrame')"><img src='images/RulesBtn.jpg' /> </button>
+			   <button class='btn' id="PlayBtn" autofocus="" name="Play" onclick="setParameters()"><img src='images/PlayBtn.jpg' /></button>
+			   <button class='btn' id="AboutBtn" autofocus="" name="About" onclick="setAbout('#GameFrame')"><img src='images/AboutBtn.jpg' /> </button>
         </div>
         </div>
-          <div id="Rules">
-            <ol>
-             Rules:<br>
-            <li>There is pile of coins kept on a desk</li>
-            <li>Coins can be picked up only from the top of the pile.</li>
-            <li>Every coin has some points</li>
-            <li>The player who collects maximum points wins</li>
-            <li>The first Player picks up 1 or 2 coins then second player has the choice of picking at most twice the number of coins taken by first player.</li>
-            <li>After every turn the player in the previous move can take twice as many coins as the previous player</li>
-            <li>Press up arrow key to select coins which you want to take and press left or right arrow key to take coins depending on the side you are playing in two player game.</li>
-            <li>Press down arrow key to drop one of the selected coins.</li>
-            <li>Press left arrow key to take coins if playing against computer. Coins can be taken only if they are selected using up and down keys</li>
-            </ol>
-          </div>
     </body>
 </html>

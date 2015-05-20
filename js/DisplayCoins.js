@@ -14,11 +14,15 @@ function display(){
    $("#Player2").css({position:'absolute',top:playerTopLocation,left:Number($("#GameFrame").width())-player1LeftLocation-PLAYER_IMG_WIDTH});
 }
 function getSrcOfTheCoin(coin){
-    if(coin.isFlipped){
-        return SILVER_COIN_FRONT_VIEW;
+    if(coin.value==25){
+        return _25_COIN;
     }
-    else
-        return SILVER_COIN_SIDE_VIEW;
+    else if(coin.value==50)
+        return _50_COIN;
+	else if(coin.value==75)
+		return _75_COIN;
+	else
+		return _100_COIN;
 }
 function addCoinToDisplay(coin){
     var inStackPos=coin.pos.inStackPos;
@@ -32,7 +36,7 @@ function addCoinToDisplay(coin){
     displaySpan(coin);
     var coinSpanId="span"+coinName;
     var span=document.getElementById(coinSpanId);
-    span.innerHTML=coin.value.toString();
+    //span.innerHTML=coin.value.toString();
 }
 function displayCoin(coin){
     var coinName="Coin"+coin.pos.inStackPos.toString();

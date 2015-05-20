@@ -32,13 +32,22 @@ function throtle(){
 function LoadGame(){
     setFrame("#GameFrameLoadPage");
     repeatOften();
-}        
+}
+function setRules(frameName){
+	var div = document.getElementById('GameFrame');
+	div.innerHTML = "<img src='images/RulesPage.jpg'/>";
+}      
+function setAbout(frameName){
+	var div = document.getElementById('GameFrame');
+	div.innerHTML = "<img src='images/AboutPage.jpg'/>";
+}  
 function setFrame(frameName){
     var heightOfWindow=Number($(window).height());
     var widthOfWindow=Number($(window).width());
     var heightOfFrame=Number($(frameName).height());
     var widthOfFrame=Number($(frameName).width());
+	//$('#loadingBar').css({position:'absolute',top:((heightOfWindow-heightOfFrame)/2+heightOfFrame/2+10),left:((widthOfWindow-widthOfFrame)/2-100)});
     if(widthOfWindow>=widthOfFrame && heightOfWindow>=heightOfFrame)
-    $(frameName).css({position:'absolute',top:(heightOfWindow-heightOfFrame)/2,left:(widthOfWindow-widthOfFrame)/2});
+		$(frameName).css({position:'absolute',top:(heightOfWindow-heightOfFrame)/2,left:(widthOfWindow-widthOfFrame)/2});
 }               
         

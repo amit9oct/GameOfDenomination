@@ -15,25 +15,32 @@ and open the template in the editor.
     font-family: 'iomanoidBack';
     src:url('fonts/iomanoid/iomanoid back.ttf') format('truetype');
 }
+@font-face{
+    font-family: 'CaviarDreams';
+    src:url('fonts/Caviar_Dreams/CaviarDreams_Bold.ttf') format('truetype');
+}
+body{
+	background-color : black;
+}
 #GameFrameLoadPage{
     position:absolute;
     top:10px;
     left:350px;
-    background-image: url('../images/Gold-coins.jpg');
-    padding-top: 10px;
+    background-image: url('../images/loadPage.jpg');
+    background-repeat: no-repeat;
+	padding-top: 10px;
     padding-left: 25px;
-    height: 500px;
-    width: 700px;
+    height: 600px;
+    width: 800px;
 }
 #GameFrame{
     position:absolute;
     top:10px;
     left:350px;
-    background-color: wheat;
-    padding-top: 10px;
-    padding-left: 25px;
-     height: 500px;
-    width: 700px;
+    padding-top: 0px;
+    padding-left: 0px;
+    height: 600px;
+    width: 800px;
 }
 #loading{
     position: absolute;
@@ -45,9 +52,9 @@ and open the template in the editor.
     font-family: iomanoidBack;
 }
 #loadingBar{
-    position:absolute;
+    position:relative;
     background-color: white;
-    top: 240px;
+    top: 350px;
     left:175px;
     width:400px;
     height: 10px;
@@ -60,40 +67,112 @@ and open the template in the editor.
     float:left;
 }
 #welcomeText{
-    position: absolute;
+    position: relative;
     top:10px;
-    left:175px;
-    font-size: 2em;
-    font-family: iomanoid;
-    color: red;
+    left:250px;
+	height: 120px;
+	width:250px;
+    background-image: url('../images/Title.svg');
 }
 #level{
-    position: absolute;
-    top:100px;
-    left:275px;
-    font-size: 2em;
-    font-family: iomanoidBack;
+    position: relative;
+	padding-left:0px;
+	padding-top:0px;
+    top:0px;
+    left:230px;
+    font-size: 1.5em;
+    font-family: CaviarDreams;
+	color: white;
 }
-#Play{
-    height:75px;
-    width:100px;
-    font-family: iomanoidBack;
-    font-size: 0.8em;
+.btn{
+	position: relative;
+	background-color: black;
+	top: 15px;
+	padding-left:0;
+	padding-top:0;
+	padding-bottom:0;
+	padding-right:0;
+	height:65px;
+    width:198px;
+}
+#RulesBtn{
+	position: relative;
+	background-color: black;
+	left: -300px;
+}
+#PlayBtn{
+	position: relative;
+	left: -150px;
+}
+#AboutBtn{
+	position: relative;
+	left: -20px;
 }
 #CoinPlane{
     position: absolute;
 }
+#Player1{
+	font-family: CaviarDreams;
+	color: red;
+}
+#Player2{
+	font-family: CaviarDreams;
+	color: red;
+}
 .coinSpan{
     color:red;
+}
+#scoreCardPlayer1{
+	font-family: CaviarDreams;
+	color: red;
+}
+#scoreCardPlayer2{
+	font-family: CaviarDreams;
+	color: red;
 }
 #FlashDiv{
     background-color: #DEDDD6;
     position: absolute;
+	font-family: CaviarDreams;
+	font-size: 1.2em;
+	color: red;
     top:20px;
     left:20px;
 }
 #Rules{
     position: absolute;
-        top: 580px;
-        left:350px;
+    top: 580px;
+    left:350px;
+}
+#Continue{
+	position: relative;
+	top: 100px;
+	left: -50px;
+	font-family: CaviarDreams;
+	font-size: 1.5em;
+}
+#ContinueBtn{
+	position: relative;
+	left: 100px;
+	top: 100px;
+	padding-left: 0px;
+	padding-top:0px;
+	height:65px;
+	width: 198px;
+}
+#coinBtn5{
+	position: relative;
+	height: 250px;
+	width: 247px;
+	padding-left: 0px;
+	padding-top: 0px;
+	background-image: url('../images/colorButtons250Ht.png');
+}
+#coinBtn10{
+	position: relative;
+	background-image: url('../images/colorButtons350Ht.png');
+}
+#coinBtn20{
+	position: relative;
+	background-image: url('../images/colorButtons450Ht.png');
 }

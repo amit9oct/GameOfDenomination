@@ -97,6 +97,7 @@ function switchTurn(){
     //console.log("turn is goining to be swtiched");
     if(NUM_OF_COINS_LEFT_IN_THE_GAME===0){
         //Check who has more coins
+		updateScoreOnDisplay();
         var message=null;
         if(player1.getScore()>player2.getScore()){
             message=SCORE_CARD_PLAYER1.playerName+" won!!";
