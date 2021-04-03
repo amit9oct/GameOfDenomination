@@ -1,4 +1,4 @@
-Game-Of-Denomination (GD)
+Game-Of-Denomination (GoD)
 =========================
 It is a coin game with the following rules:
 
