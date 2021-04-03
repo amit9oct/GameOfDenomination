@@ -19,6 +19,6 @@ It is a challenging game and test your ability to think and calculate stuff. The
 
 The coins are only of some particular denomainations i.e. 25,50,75 and 100. This is the reason for the game to be called Game-Of-Denomination.
 
-Play the game here: http://amit9oct.github.io/
+Play the game here: https://amit9oct.pythonanywhere.com/game-of-denomination
 
 If you like it share it with your friends.
